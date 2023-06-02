@@ -1,1 +1,14 @@
-<p>info works!</p>
+<div id="backgroundSquare">
+    <img [src]="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="..." width="50%" style="object-fit: cover; display: block; margin-left: auto; margin-right: auto;" height="600px">
+    <div id="data">
+        <h1 id="title">{{movie.title}}</h1>
+        <h3 id="releaseDateStatus">{{movie.release_date}} {{movie.status}}</h3>
+        <br><br>
+        <p id="overview">{{movie.overview}}</p>
+        <br>
+        <p id="tagline">{{movie.tagline}}</p>
+        <br>
+        <h4 id="vote">Rated {{movie.vote_average}} out of 10</h4>
+        <h4 id="vote">Original Language: {{movie.original_language}}</h4>
+    </div>
+</div> 

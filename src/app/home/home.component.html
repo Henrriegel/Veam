@@ -1,27 +1,18 @@
+<div>
+  <h1 style="width: 100%; text-align: center;">Popular Tv Series and Movies</h1>
+</div>
 <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <!-- <div *ngFor="let media of mediaArray">
-        <h1>{{media.title}}</h1>
-    </div> -->
-    <div class="carousel-inner">
-      <div class="carousel-item bg-body-tertiary" *ngFor="let media of mediaArray">
-        <img src="https://picsum.photos/200/300" class="d-block" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
+  <ngb-carousel style="width: 100%; height: 600px; float: none; margin: 0 auto;">
+    <ng-template *ngFor="let media of mediaArray" ngbSlide>
+      <div class="picsum-img-wrapper">
+        <a [routerLink]="['/Information', media.id]">
+          <img [src]="'https://image.tmdb.org/t/p/original' + media.backdrop_path" alt="Random first slide" width="100%" height="600px" style="object-fit: cover;"/>
+        </a>
       </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+      <div class="carousel-caption">
+        <h3>{{media.title}}</h3>
+        <p>{{media.overview}}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

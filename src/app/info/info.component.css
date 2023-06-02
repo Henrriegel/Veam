@@ -1,0 +1,9 @@
+#backgroundSquare{
+    background-color: darkgrey;
+    width: 100%; 
+    height: max-content; 
+    display: grid; 
+    padding: 2% 10% 5% 1%;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr;
+}
